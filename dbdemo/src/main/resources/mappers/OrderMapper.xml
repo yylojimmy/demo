@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.db.dbdemo.mapper.OrderMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="OrderTable" id="OrderMap">
+        <id column="id_order_table" property="idOrderTable" jdbcType="INTEGER" />
+        <result column="customer_no" property="customerNo" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+
+    <select id="getOrderTable" parameterType="com.example.db.dbdemo.dto.OrderTable" resultMap="OrderMap">
+        select *
+        from order_table
+        where 1=1
+            and id_order_table = #{idOrderTable,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertOrderTable" parameterType="com.example.db.dbdemo.dto.OrderTable" >
+        insert into order_table (customer_no ) values (#{customerNo, jdbcType=VARCHAR})
+    </insert>
+
+
+</mapper>
