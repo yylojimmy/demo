@@ -33,10 +33,9 @@ public class OrderController {
         return orderRepository.findById(id).orElseThrow(()-> new OrderNotFoundException(id));
     }*/
 
-    @GetMapping("/ordersB/{id}")
-    OrderTable findOneM(@PathVariable Long id){
-        OrderTable orderTable = new OrderTable();
-        orderTable.setIdOrderTable(id);
+    @PostMapping("/ordersB")
+    OrderTable findOneM(@RequestBody OrderTable orderTable){
+        System.out.println("read customer_no - "+orderTable.getCustomerNo());
         return orderMapper.getOrderTable(orderTable);
     }
 

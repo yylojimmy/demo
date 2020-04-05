@@ -14,7 +14,7 @@
         select *
         from order_table
         where 1=1
-            and id_order_table = #{idOrderTable,jdbcType=INTEGER}
+            and customer_no = #{customerNo,jdbcType=VARCHAR}
     </select>
 
     <insert id="insertOrderTable" parameterType="com.example.db.dbdemo.dto.OrderTable" >
