@@ -9,7 +9,6 @@ import java.util.LinkedHashSet;
 
 /**
  * 分库策略的简单实现
- * Created by Kane on 2018/1/22.
  */
 public class ModuloDatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgorithm<String> {
 
